@@ -873,7 +873,7 @@ instance Binary RuntimeRep where
     put AddrRep         = putWord8 9
     put FloatRep        = putWord8 10
     put DoubleRep       = putWord8 11
-#if __GLASGOW_HASKELL__ >= 803
+#if __GLASGOW_HASKELL__ >= 805
     put Int8Rep          = putWord8 12
     put Word8Rep         = putWord8 13
 #endif
@@ -893,7 +893,7 @@ instance Binary RuntimeRep where
           9  -> pure AddrRep
           10 -> pure FloatRep
           11 -> pure DoubleRep
-#if __GLASGOW_HASKELL__ >= 803
+#if __GLASGOW_HASKELL__ >= 805
           12 -> pure Int8Rep
           13 -> pure Word8Rep
 #endif
