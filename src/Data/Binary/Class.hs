@@ -876,6 +876,8 @@ instance Binary RuntimeRep where
 #if __GLASGOW_HASKELL__ >= 805
     put Int8Rep          = putWord8 12
     put Word8Rep         = putWord8 13
+    put Int16Rep         = putWord8 14
+    put Word16Rep        = putWord8 15
 #endif
 
     get = do
@@ -896,6 +898,8 @@ instance Binary RuntimeRep where
 #if __GLASGOW_HASKELL__ >= 805
           12 -> pure Int8Rep
           13 -> pure Word8Rep
+          14 -> pure Int16Rep
+          15 -> pure Word16Rep
 #endif
           _  -> fail "GHCi.TH.Binary.putRuntimeRep: invalid tag"
 
