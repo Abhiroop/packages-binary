@@ -878,6 +878,8 @@ instance Binary RuntimeRep where
     put Word8Rep         = putWord8 13
     put Int16Rep         = putWord8 14
     put Word16Rep        = putWord8 15
+    put Int32Rep         = putWord8 16
+    put Word32Rep        = putWord8 17
 #endif
 
     get = do
@@ -900,6 +902,8 @@ instance Binary RuntimeRep where
           13 -> pure Word8Rep
           14 -> pure Int16Rep
           15 -> pure Word16Rep
+          16 -> pure Int32Rep
+          17 -> pure Word32Rep
 #endif
           _  -> fail "GHCi.TH.Binary.putRuntimeRep: invalid tag"
 
